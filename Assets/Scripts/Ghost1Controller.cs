@@ -2,49 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class GhostController : MonoBehaviour
 {
     public Sprite stationary;
     public Sprite spriteUp;
     public Sprite spriteDown;
-    public Sprite spriteRight;
-    public Sprite spriteLeft;
-    
+
     public Rigidbody2D rb;
     public float velocity = 3;
 
     private SpriteRenderer spriteRenderer;
+    private bool movingUp = true;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown("up"))
+        // Move the ghost up and down
+        MoveUpAndDown();
+    }
+
+    private void MoveUpAndDown()
+    {
+        if (movingUp)
         {
             rb.velocity = new Vector2(0, velocity);
             spriteRenderer.sprite = spriteUp;
         }
-        if (Input.GetKeyDown("down"))
+        else
         {
             rb.velocity = new Vector2(0, -velocity);
             spriteRenderer.sprite = spriteDown;
         }
-        if (Input.GetKeyDown("right"))
+
+        if (transform.position.y >= 3f)
         {
-            rb.velocity = new Vector2(velocity, 0);
-            spriteRenderer.sprite = spriteRight;
+            movingUp = false;
         }
-        if (Input.GetKeyDown("left"))
+        else if (transform.position.y <= -4f)
         {
-            rb.velocity = new Vector2(-velocity, 0);
-            spriteRenderer.sprite = spriteLeft;
+            movingUp = true;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
     }
 }
