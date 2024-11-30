@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Required for scene management
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,21 +10,18 @@ public class PlayerController : MonoBehaviour
     public Sprite spriteDown;
     public Sprite spriteRight;
     public Sprite spriteLeft;
-    
+
     public Rigidbody2D rb;
-    public float velocity = 5;
+    public float velocity = 3;
 
     private SpriteRenderer spriteRenderer;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("up"))
@@ -45,6 +43,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(-velocity, 0);
             spriteRenderer.sprite = spriteLeft;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Ghost"))
+        {
+            SceneManager.LoadScene("EndScreen");
         }
     }
 }
