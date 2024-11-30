@@ -20676,7 +20676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ad085fb23b24b37a3844ca2a9acdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2011136118}
   score: 0
 --- !u!1 &1716757817
 GameObject:
@@ -23913,6 +23912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267ea4eb9cc4b0b4db49cc6bc9fedb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1716476686}
   stationary: {fileID: 21300000, guid: 75d5e7e05218c43f39bb4cbe9e136e83, type: 3}
   spriteUp: {fileID: 21300000, guid: 97de21267ee66470fa78edc66c4eec59, type: 3}
   spriteDown: {fileID: 21300000, guid: 6733a7e322c6a4edbbcfe7a99e535a6a, type: 3}
