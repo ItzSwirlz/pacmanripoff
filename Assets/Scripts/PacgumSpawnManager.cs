@@ -48,7 +48,9 @@ public class PacgumSpawnController : MonoBehaviour
                     break;
             }
 
-            Instantiate(pacGum, pos, Quaternion.identity);
+            GameObject newPacGum = Instantiate(pacGum, pos, Quaternion.identity);
+            newPacGum.tag = "Pacgum";
+
 
             yield return new WaitForSeconds(3.0f);
         }
