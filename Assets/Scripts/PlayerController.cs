@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Required for scene management
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,22 +11,19 @@ public class PlayerController : MonoBehaviour
     public Sprite spriteDown;
     public Sprite spriteRight;
     public Sprite spriteLeft;
-    
+
     public Rigidbody2D rb;
-    public float velocity = 5;
     private float border = 11;
+    public float velocity = 5;
 
     private SpriteRenderer spriteRenderer;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("up"))
@@ -56,6 +54,14 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < -border)
         {
             transform.position = new Vector3(border - 1, transform.position.y, transform.position.z);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Ghost"))
+        {
+            SceneManager.LoadScene("EndScreen");
         }
     }
 }
