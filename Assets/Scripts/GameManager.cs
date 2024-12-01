@@ -10,20 +10,25 @@ public class GameManager : MonoBehaviour
 
     private int score = 0;
 
+    // Awake is called when the GameManager is instantiated
     void Awake()
     {
+        // If another instance already exists, get rid of it
         if(_instance != null && _instance != this) {
             Destroy(this.gameObject);
         } else {
+            // If no instance exists, make it this one
             _instance = this;
         }
     }
 
+    // Start is called before the first frame update
     void Start()
     {
 
     }
 
+    // Update is called once per frame
     void Update()
     {
     }
@@ -35,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public int GetScore()
     {
-        return score;
+    return score;
     }
 
 }

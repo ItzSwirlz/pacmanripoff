@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = stationary; 
     }
 
     void Update()
