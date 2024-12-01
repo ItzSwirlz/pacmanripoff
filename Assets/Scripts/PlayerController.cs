@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement; // Required for scene management
 
 public class PlayerController : MonoBehaviour
 {
-    public GameManager gameManager;
     public Sprite stationary;
     public Sprite spriteUp;
     public Sprite spriteDown;
@@ -21,7 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -56,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Pacgum"))
         {
-            gameManager.AddScore(5);
+            GameManager.Instance.AddScore(5);
             Destroy(other.gameObject);
         }
     }
