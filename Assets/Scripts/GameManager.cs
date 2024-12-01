@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public int GetScore()
     {
-    return score;
+        return score;
     }
 
 }
