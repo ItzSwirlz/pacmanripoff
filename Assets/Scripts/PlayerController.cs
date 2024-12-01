@@ -52,5 +52,10 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("EndScreen");
         }
+        else if (other.CompareTag("Pacgum"))
+        {
+            GameManager.Instance.AddScore(5);
+            Destroy(other.gameObject);
+        }
     }
 }
