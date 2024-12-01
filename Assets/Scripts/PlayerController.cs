@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,8 @@ public class PlayerController : MonoBehaviour
     public Sprite spriteLeft;
 
     public Rigidbody2D rb;
-    public float velocity = 3;
+    private float border = 11;
+    public float velocity = 5;
 
     private SpriteRenderer spriteRenderer;
 
@@ -44,6 +46,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(-velocity, 0);
             spriteRenderer.sprite = spriteLeft;
+        }
+
+        if (transform.position.x > border)
+        {
+            transform.position = new Vector3(-border + 1, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x < -border)
+        {
+            transform.position = new Vector3(border - 1, transform.position.y, transform.position.z);
         }
     }
 
