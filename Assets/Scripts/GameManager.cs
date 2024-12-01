@@ -31,11 +31,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(score);
     }
 
     public void AddScore(int val)
     {
         score += val;
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
 }

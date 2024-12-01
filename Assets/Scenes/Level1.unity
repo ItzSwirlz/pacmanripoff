@@ -16901,9 +16901,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1404363278}
   - component: {fileID: 1404363279}
+  - component: {fileID: 1404363280}
   m_Layer: 0
   m_Name: Pac-Gum Spawn Manager
-  m_TagString: Untagged
+  m_TagString: Pacgum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16936,6 +16937,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pacGum: {fileID: 1580786294938402020, guid: 109d061e315d549518f70772afa93abc, type: 3}
+--- !u!61 &1404363280
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404363277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1405712010
 GameObject:
   m_ObjectHideFlags: 0
@@ -20676,7 +20722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ad085fb23b24b37a3844ca2a9acdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
 --- !u!1 &1716757817
 GameObject:
   m_ObjectHideFlags: 0
@@ -23912,7 +23957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267ea4eb9cc4b0b4db49cc6bc9fedb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1716476686}
   stationary: {fileID: 21300000, guid: 75d5e7e05218c43f39bb4cbe9e136e83, type: 3}
   spriteUp: {fileID: 21300000, guid: 97de21267ee66470fa78edc66c4eec59, type: 3}
   spriteDown: {fileID: 21300000, guid: 6733a7e322c6a4edbbcfe7a99e535a6a, type: 3}
