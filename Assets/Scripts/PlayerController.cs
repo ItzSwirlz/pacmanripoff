@@ -68,6 +68,9 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.AddScore(5);
             Destroy(other.gameObject);
+
+            // Randomize speed
+            this.velocity = Random.Range(1, 11);
         }
 
     }
